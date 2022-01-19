@@ -1,0 +1,38 @@
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.android.library'
+
+group = 'com.github.navinilavarasan'
+version = '1.01'
+
+android {
+    compileSdkVersion 28
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 104
+        versionName "1.04"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            consumerProguardFile 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.7'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
+    implementation 'org.jetbrains:annotations:16.0.1'
+
+    testImplementation 'junit:junit:4.12'
+}
